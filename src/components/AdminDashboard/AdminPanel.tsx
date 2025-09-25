@@ -6,7 +6,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { BarChart3, Upload, Users, MessageCircle, FileText, Settings, TrendingUp } from 'lucide-react';
 
-export const AdminPanel: React.FC = () => {
+interface AdminPanelProps {
+  currentView: 'landing' | 'admin';
+  setCurrentView: React.Dispatch<React.SetStateAction<'landing' | 'admin'>>;
+}
+
+export const AdminPanel: React.FC<AdminPanelProps> = ({ currentView, setCurrentView }) => {
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,10 +43,19 @@ export const AdminPanel: React.FC = () => {
             <h1 className="text-responsive-xl font-bold gradient-text">Admin Dashboard</h1>
             <p className="text-muted-foreground">Manage your AI student support system</p>
           </div>
-          <Button variant="gradient-primary">
-            <Settings className="mr-2 h-4 w-4" />
-            Settings
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button
+              onClick={() => setCurrentView('landing')}
+              variant="outline"
+              size="sm"
+            >
+              Landing View
+            </Button>
+            <Button variant="gradient-primary">
+              <Settings className="mr-2 h-4 w-4" />
+              Settings
+            </Button>
+          </div>
         </div>
 
         {/* Stats Grid */}

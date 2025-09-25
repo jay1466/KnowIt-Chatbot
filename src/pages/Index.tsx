@@ -18,7 +18,7 @@ const Index = () => {
       
       {currentView === 'admin' && (
         <>
-          <AdminPanel />
+          <AdminPanel currentView={currentView} setCurrentView={setCurrentView} />
         </>
       )}
     </div>
