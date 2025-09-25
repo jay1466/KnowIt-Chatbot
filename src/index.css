@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Educational Chatbot Design System - All colors MUST be HSL */
+
+@layer base {
+  :root {
+    /* Core Background & Text */
+    --background: 220 25% 98%;
+    --foreground: 222 25% 12%;
+
+    /* Card & Surface Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 222 25% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 25% 12%;
+
+    /* Primary - Educational Blue */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 217 91% 75%;
+
+    /* Secondary - Soft Purple */
+    --secondary: 258 90% 66%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-glow: 258 90% 80%;
+
+    /* Success - Educational Green */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --success-glow: 142 76% 50%;
+
+    /* Muted Tones */
+    --muted: 220 20% 96%;
+    --muted-foreground: 220 15% 45%;
+
+    /* Accent - Warm Orange */
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Chat Specific Colors */
+    --chat-bubble-user: 217 91% 60%;
+    --chat-bubble-bot: 220 20% 96%;
+    --chat-bubble-user-text: 0 0% 100%;
+    --chat-bubble-bot-text: 222 25% 12%;
+
+    /* Status Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 220 20% 88%;
+    --input: 220 20% 94%;
+    --ring: 217 91% 60%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-glow)));
+    --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(var(--success-glow)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+
+    /* Shadows */
+    --shadow-soft: 0 2px 8px hsl(var(--primary) / 0.08);
+    --shadow-medium: 0 4px 16px hsl(var(--primary) / 0.12);
+    --shadow-large: 0 8px 32px hsl(var(--primary) / 0.16);
+    --shadow-glow: 0 0 24px hsl(var(--primary-glow) / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 12px;
+  }
+
+  .dark {
+    /* Core Background & Text */
+    --background: 222 25% 8%;
+    --foreground: 220 25% 95%;
+
+    /* Card & Surface Colors */
+    --card: 222 25% 10%;
+    --card-foreground: 220 25% 95%;
+
+    --popover: 222 25% 10%;
+    --popover-foreground: 220 25% 95%;
+
+    /* Primary - Educational Blue (Dark Mode) */
+    --primary: 217 91% 65%;
+    --primary-foreground: 222 25% 8%;
+    --primary-glow: 217 91% 80%;
+
+    /* Secondary - Soft Purple (Dark Mode) */
+    --secondary: 258 90% 71%;
+    --secondary-foreground: 222 25% 8%;
+    --secondary-glow: 258 90% 85%;
+
+    /* Success - Educational Green (Dark Mode) */
+    --success: 142 76% 41%;
+    --success-foreground: 222 25% 8%;
+    --success-glow: 142 76% 55%;
+
+    /* Muted Tones (Dark Mode) */
+    --muted: 222 20% 15%;
+    --muted-foreground: 220 15% 65%;
+
+    /* Accent - Warm Orange (Dark Mode) */
+    --accent: 25 95% 58%;
+    --accent-foreground: 222 25% 8%;
+
+    /* Chat Specific Colors (Dark Mode) */
+    --chat-bubble-user: 217 91% 65%;
+    --chat-bubble-bot: 222 20% 15%;
+    --chat-bubble-user-text: 222 25% 8%;
+    --chat-bubble-bot-text: 220 25% 95%;
+
+    /* Status Colors (Dark Mode) */
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 222 25% 8%;
+    --warning: 38 92% 55%;
+    --warning-foreground: 222 25% 8%;
+
+    /* Borders & Inputs (Dark Mode) */
+    --border: 222 20% 20%;
+    --input: 222 20% 18%;
+    --ring: 217 91% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer components {
+  /* Chat Bubble Animations */
+  .chat-bubble-appear {
+    animation: bubble-appear 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .chat-typing {
+    animation: typing-dots 1.4s infinite;
+  }
+
+  .floating-widget {
+    box-shadow: var(--shadow-large);
+    transition: var(--transition-smooth);
+  }
+
+  .floating-widget:hover {
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+  }
+
+  /* Voice Recording Animation */
+  .voice-recording {
+    animation: pulse-ring 1.5s infinite;
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glassmorphism Effect */
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+@layer utilities {
+  /* Custom Animations */
+  @keyframes bubble-appear {
+    0% {
+      opacity: 0;
+      transform: translateY(10px) scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes typing-dots {
+    0%, 60%, 100% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 hsl(var(--destructive) / 0.7);
+    }
+    70% {
+      transform: scale(1.05);
+      box-shadow: 0 0 0 10px hsl(var(--destructive) / 0);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 hsl(var(--destructive) / 0);
+    }
+  }
+
+  /* Responsive Text Sizes */
+  .text-responsive-xl {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  .text-responsive-lg {
+    @apply text-lg md:text-xl lg:text-2xl;
+  }
+}
