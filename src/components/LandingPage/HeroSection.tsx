@@ -63,13 +63,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ currentView, setCurren
             >
               Admin View
             </Button>
-            <Button 
-              onClick={() => setCurrentView('landing')}
-              variant={currentView === 'landing' ? 'gradient-primary' : 'ghost'}
-              size="sm"
-            >
-              Landing View
-            </Button>
           </div>
         </div>
       </nav>
