@@ -62,14 +62,11 @@ export const HeroSection: React.FC = () => {
       <div className="container mx-auto px-4 pt-20 pb-16">
         <div className="text-center space-y-8 mb-16">
           <div className="space-y-4">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-              <span className="gradient-text">AI-Powered Student Support</span>
-              <br />
-              <span className="text-foreground">For Indian Colleges</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-center leading-tight gradient-text">
+              Your Personal AI <span className="block md:inline">Student Support: <span className="alt-gradient-text">KnowIt</span></span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Multilingual chatbot that handles student queries instantly, reduces workload, 
-              and provides 24/7 support in Hindi, English, and regional languages.
+            <p className="mt-4 text-lg text-center text-muted-foreground max-w-2xl">
+              Get instant answers to all your college queries with KnowIt, your intelligent virtual assistant.
             </p>
           </div>
 
