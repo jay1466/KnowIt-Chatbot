@@ -46,7 +46,7 @@ export const HeroSection: React.FC = () => {
             <div className="h-8 w-8 rounded-lg bg-gradient-primary flex items-center justify-center">
               <MessageCircle className="h-4 w-4 text-primary-foreground" />
             </div>
-            <span className="font-bold text-lg gradient-text">EduChat AI</span>
+            <span className="font-bold text-lg gradient-text">KnowIt</span>
           </div>
           <div className="ml-auto flex items-center space-x-4">
             <Button variant="ghost">Features</Button>
