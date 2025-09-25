@@ -11,32 +11,14 @@ const Index = () => {
     <div className="relative">
       {currentView === 'landing' && (
         <>
-          <HeroSection />
+          <HeroSection currentView={currentView} setCurrentView={setCurrentView} />
           <ChatWidget />
-          <div className="fixed top-4 right-4 z-50">
-            <Button 
-              onClick={() => setCurrentView('admin')}
-              variant="outline"
-              size="sm"
-            >
-              Admin View
-            </Button>
-          </div>
         </>
       )}
       
       {currentView === 'admin' && (
         <>
           <AdminPanel />
-          <div className="fixed top-4 right-4 z-50">
-            <Button 
-              onClick={() => setCurrentView('landing')}
-              variant="outline"
-              size="sm"
-            >
-              Landing View
-            </Button>
-          </div>
         </>
       )}
     </div>

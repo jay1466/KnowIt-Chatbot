@@ -3,7 +3,12 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { MessageCircle, Zap, Globe, Shield, Clock, Users } from 'lucide-react';
 
-export const HeroSection: React.FC = () => {
+interface HeroSectionProps {
+  currentView: 'landing' | 'admin';
+  setCurrentView: React.Dispatch<React.SetStateAction<'landing' | 'admin'>>;
+}
+
+export const HeroSection: React.FC<HeroSectionProps> = ({ currentView, setCurrentView }) => {
   const features = [
     {
       icon: MessageCircle,
@@ -49,11 +54,23 @@ export const HeroSection: React.FC = () => {
             <span className="font-bold text-lg gradient-text">KnowIt</span>
           </div>
           <div className="ml-auto flex items-center space-x-4">
-            <Button variant="ghost">Features</Button>
-            <Button variant="ghost">About</Button>
-            <Button variant="gradient-primary">
-              Admin Login
-            </Button>
+            {currentView === 'landing' ? (
+              <Button
+                onClick={() => setCurrentView('admin')}
+                variant="outline"
+                size="sm"
+              >
+                Admin View
+              </Button>
+            ) : (
+              <Button
+                onClick={() => setCurrentView('landing')}
+                variant="outline"
+                size="sm"
+              >
+                Landing View
+              </Button>
+            )}
           </div>
         </div>
       </nav>
