@@ -65,7 +65,7 @@ export const HeroSection: React.FC = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-center leading-tight gradient-text">
               Your Personal AI <span className="block md:inline">Student Support: <span className="alt-gradient-text">KnowIt</span></span>
             </h1>
-            <p className="mt-4 text-lg text-center text-muted-foreground max-w-2xl">
+            <p className="mt-4 text-lg text-center text-muted-foreground max-w-2xl mx-auto">
               Get instant answers to all your college queries with KnowIt, your intelligent virtual assistant.
             </p>
           </div>
