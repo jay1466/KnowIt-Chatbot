@@ -14,7 +14,7 @@ To set up and run this project on your local machine, follow these steps:
 
 ```sh
 # Step 1: Clone the repository.
-git clone <YOUR_REPOSITORY_URL>
+git clone https://github.com/jay1466/KnowIt-Chatbot.git
 
 # Step 2: Navigate to the project directory.
 cd KnowIt-Chatbot
